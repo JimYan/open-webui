@@ -1,0 +1,25 @@
+model_list: 
+  - model_name: gpt-4o # user-facing model alias
+    litellm_params: # all params accepted by litellm.completion() - https://docs.litellm.ai/docs/completion/input
+      model: azure/gpt4o
+      api_base: https://change.to.azure.endpoint/
+      api_key: change.to.azure.api_key
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: azure/gpt-4o-mini
+      api_base: https://change.to.azure.endpoint/
+      api_key: change.to.azure.api_key
+  - model_name: text-embedding-3-large
+    litellm_params:
+      model: azure/text-embedding-3-large
+      api_base: https://change.to.azure.endpoint/
+      api_key: change.to.azure.api_key
+  - model_name: dall-e-2
+    litellm_params:
+      model: azure/dall-e-2
+      api_base: https://change.to.azure.endpoint/
+      api_key: change.to.azure.api_key
+
+general_settings: 
+  master_key: 替换密钥 # [OPTIONAL] Only use this if you to require all calls to contain this key (Authorization: Bearer sk-1234)
+  alerting: ["slack"] # [OPTIONAL] If you want Slack Alerts for Hanging LLM requests, Slow llm responses, Budget Alerts. Make sure to set `SLACK_WEBHOOK_URL` in your env
