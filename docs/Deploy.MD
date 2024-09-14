@@ -1,5 +1,7 @@
 # 系统部署文档
 
+本文是Conda + PM2 + LLMLite + Open WEB UI + Postgresql部署一个可以借助微软云（https://oai.azure.com/）打造的内部版ChatGPT。
+
 ## Conda
 
 > Python 虚拟环境工具
@@ -156,7 +158,7 @@ pm2 start pm2.config.js --only openWebUI
 
 ## Postgresql
 
-在 Open WEBUI 中，默认使用本地的sqlite存储相关数据，可以使用 Postgresql
+在 Open WEBUI 中，默认使用本地的sqlite存储相关数据，可以使用 Postgresql代替做分布式部署和应用。
 
 ### Install
 
@@ -197,4 +199,3 @@ psql -h 127.0.0.1 -U username -W -d dbname
 
 - postgresql https://www.cnblogs.com/hellojesson/p/12109312.html
 - postgresql https://www.sjkjc.com/postgresql/create-table/
--
