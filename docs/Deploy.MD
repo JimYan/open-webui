@@ -1,6 +1,6 @@
 # 系统部署文档
 
-本文是Conda + PM2 + LLMLite + Open WEB UI + Postgresql部署一个可以借助微软云（https://oai.azure.com/）打造的内部版ChatGPT。
+本文是Conda + PM2 + LLMLite + Open WEB UI + Postgresql部署一个可以借助微软云（https://oai.azure.com/）打造的私有化部署的ChatAGI。
 
 ## Conda
 
@@ -52,7 +52,8 @@ pip install 'litellm[proxy]'
 ```bash
 conda activate litellm-proxy-env
 litellm --config litellm/litellm.yaml # 单次执行
-pm2 start litellm.pm2.config.js --only litellm
+pm2 start pm2.config.js --only litellm # 通过 PM2 启动常驻任务
+pm2 restart litellm # 重启litellm
 ```
 
 ## Open Web UI
